@@ -1,0 +1,24 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& mat) {
+        
+    // here nth row and nth colum are swaped 
+    // To do so first trasport the array and then revese each row
+    int n = mat.size();
+
+    //trasporting(converting rows into colums)
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < i; j++)
+        {
+            swap(mat[i][j],mat[j][i]);
+        }
+    }
+    
+    //reverse (reversing the row's elemnts)
+    for(int i = 0; i < n ;i++)
+    {
+        reverse(mat[i].begin(),mat[i].end());
+    }
+    }
+};
